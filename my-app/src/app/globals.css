@@ -2,3 +2,40 @@
 @tailwind components;
 @tailwind utilities;
 
+.headerContainer {
+  background-color: #333;
+  padding: 10px;
+  color: white;
+  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5); /* Добавляем тень */
+  border-radius: 0 0 5px 5px;
+}
+
+.linksContainer {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  max-width: 1200px;
+  margin: 0 auto;
+}
+
+.linksList {
+  list-style: none;
+  display: flex;
+  gap: 20px;
+  padding: 0;
+  margin: 0;
+}
+
+.listElement {
+  font-size: 18px;
+}
+
+.listElement a {
+  color: white;
+  text-decoration: none;
+  transition: color 0.3s ease;
+}
+
+.listElement a:hover {
+  color: lightgray;
+}
