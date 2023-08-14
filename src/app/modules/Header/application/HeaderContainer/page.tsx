@@ -18,7 +18,9 @@ export default function HeaderContainer({ session }: ISession) {
 
                 </ul>
             </div>
+
             <HeaderAuthSection session={session}/>
+            
         </nav>
     )
 }
