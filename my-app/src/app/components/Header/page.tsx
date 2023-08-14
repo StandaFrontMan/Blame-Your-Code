@@ -1,6 +1,14 @@
+"use client";
+
+import { useSession } from "next-auth/react";
 import Link from "next/link";
 
 export default function Header() {
+
+    const session = useSession()
+
+    console.log(session);
+
     return (
         <nav className="headerContainer">
             <div className="linksContainer">
@@ -13,7 +21,7 @@ export default function Header() {
                     <li className="listElement">
                         <Link href='/pages/aboutPage'>About</Link>
                     </li>
-                    
+
                 </ul>
             </div>
         </nav>
