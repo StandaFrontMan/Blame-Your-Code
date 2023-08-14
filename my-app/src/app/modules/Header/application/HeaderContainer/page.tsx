@@ -1,14 +1,8 @@
-"use client";
-
-import { useSession } from "next-auth/react";
 import Link from "next/link";
+import HeaderAuthSection from "../HeaderAuthSection/HeaderAuthSection";
+import { ISession } from "../Isession";
 
-export default function Header() {
-
-    const session = useSession()
-
-    console.log(session);
-
+export default function HeaderContainer({ session }: ISession) {
     return (
         <nav className="headerContainer">
             <div className="linksContainer">
@@ -24,6 +18,7 @@ export default function Header() {
 
                 </ul>
             </div>
+            <HeaderAuthSection session={session}/>
         </nav>
     )
 }
