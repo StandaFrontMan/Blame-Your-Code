@@ -19,5 +19,8 @@ export const authConfig: AuthOptions = {
                 return await authorizeFunction(credentials)
             }
         })
-    ]
+    ],
+    pages: {
+         signIn: '/pages/authPage'
+    }
 }
