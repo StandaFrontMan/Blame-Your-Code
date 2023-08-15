@@ -33,7 +33,7 @@ const CredentialsAuthForm = () => {
             <input placeholder='Password...' type="password" name='password' required/>
         </div>
         <div className='buttonBlock'>
-            <button>Sign In</button>
+            <button className='signInButton'>Sign In</button>
         </div>
     </form>
   )

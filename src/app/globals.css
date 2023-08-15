@@ -39,3 +39,76 @@
 .listElement a:hover {
   color: lightgray;
 }
+
+
+
+.container {
+  display: flex;
+  justify-content: center;
+  padding: 30px;
+  border-radius: 8px;
+  min-height: 100vh;
+}
+
+.stack {
+  text-align: center;
+}
+
+.title {
+  font-size: 24px;
+  margin-bottom: 20px;
+}
+
+.orDivider {
+  margin: 20px 0;
+  font-size: 18px;
+  color: #777;
+}
+
+
+.googleAuthButton {
+  background-color: #4285f4;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+  margin-bottom: 10px;
+}
+
+.googleAuthButton:hover {
+  background-color: #357ae8;
+}
+
+
+.authForm {
+  text-align: center;
+}
+
+.inputBlock {
+  margin-bottom: 20px;
+}
+
+input {
+  padding: 10px;
+  margin: 5px;
+  border: 1px solid #ccc;
+  border-radius: 4px;
+  width: 50%;
+  box-sizing: border-box;
+}
+
+.signInButton {
+  background-color: #007bff;
+  color: white;
+  border: none;
+  padding: 10px 20px;
+  font-size: 16px;
+  cursor: pointer;
+  border-radius: 4px;
+}
+
+.signInButton:hover {
+  background-color: #0056b3;
+}

@@ -5,8 +5,9 @@ export default async function AuthPage() {
     return (
         <main className="container">
             <div className="stack">
-                <h1>Sign In</h1>
+                <h1 className="title">Sign In</h1>
                 <GoogleAuthButton />
+                <div>or</div>
                 <CredentialsAuthForm />
             </div>
         </main>
