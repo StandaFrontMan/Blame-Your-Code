@@ -10,7 +10,7 @@ const GoogleAuthButton = () => {
     const callbackUrl = searchParams.get('callbackUrl') || '/pages/profilePage';
 
   return (
-    <button className='googleAuthButton' onClick={() => signIn('google', {callbackUrl})}>
+    <button className='py-2 px-2 mx-2 my-2 bg-blue-500 hover:bg-blue-600 text-white font-bold rounded-lg duration-150' onClick={() => signIn('google', {callbackUrl})}>
         Sign In with Google
     </button>
   )

@@ -2,113 +2,13 @@
 @tailwind components;
 @tailwind utilities;
 
-.headerContainer {
-  background-color: #333;
-  padding: 10px;
-  color: white;
-  box-shadow: 0px 2px 7px rgba(0, 0, 0, 0.5); /* Добавляем тень */
-  border-radius: 0 0 5px 5px;
-}
-
-.linksContainer {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  max-width: 1200px;
-  margin: 0 auto;
-}
-
-.linksList {
-  list-style: none;
-  display: flex;
-  gap: 20px;
-  padding: 0;
-  margin: 0;
-}
-
-.listElement {
-  font-size: 18px;
-}
-
-.listElement a {
-  color: white;
-  text-decoration: none;
-  transition: color 0.3s ease;
-}
-
-.listElement a:hover {
-  color: lightgray;
-}
-
-
-
-.container {
-  display: flex;
+.gg {
+  flex-direction: column;
   justify-content: center;
-  padding: 30px;
-  border-radius: 8px;
-  min-height: 100vh;
-}
-
-.stack {
-  text-align: center;
-}
-
-.title {
-  font-size: 24px;
-  margin-bottom: 20px;
-}
-
-.orDivider {
-  margin: 20px 0;
-  font-size: 18px;
-  color: #777;
+  align-items: center;
 }
 
 
-.googleAuthButton {
-  background-color: #4285f4;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-  margin-bottom: 10px;
-}
-
-.googleAuthButton:hover {
-  background-color: #357ae8;
-}
 
 
-.authForm {
-  text-align: center;
-}
 
-.inputBlock {
-  margin-bottom: 20px;
-}
-
-input {
-  padding: 10px;
-  margin: 5px;
-  border: 1px solid #ccc;
-  border-radius: 4px;
-  width: 50%;
-  box-sizing: border-box;
-}
-
-.signInButton {
-  background-color: #007bff;
-  color: white;
-  border: none;
-  padding: 10px 20px;
-  font-size: 16px;
-  cursor: pointer;
-  border-radius: 4px;
-}
-
-.signInButton:hover {
-  background-color: #0056b3;
-}

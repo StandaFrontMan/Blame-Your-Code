@@ -2,8 +2,8 @@ import Image from 'next/image'
 
 export default function Home() {
   return (
-    <main className="container">
-      Home Container
+    <main className="mx-10">
+      <h1 className='px-2 py-2 mx-2 my-2 text-3xl flex items-center justify-center'>Home Page</h1>
     </main>
   )
 }

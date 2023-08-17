@@ -4,23 +4,23 @@ import { ISession } from "../Isession";
 
 export default function HeaderContainer({ session }: ISession) {
     return (
-        <nav className="headerContainer">
-            <div className="linksContainer">
+        <nav className="px-2">
+            <div className="flex">
                 <ul className="linksList">
 
-                    <li className="listElement">
+                     <li className="inline-block py-3 px-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 duration-150"> {/* стили для ссылок */}
                         <Link href='/'>Home</Link>
                     </li>
 
-                    <li className="listElement">
+                    <li className="inline-block py-3 px-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 duration-150">
                         <Link href='/pages/aboutPage'>About</Link>
                     </li>
 
                 </ul>
-            </div>
 
-            <HeaderAuthSection session={session}/>
-            
+                <HeaderAuthSection session={session}/>
+
+            </div>            
         </nav>
     )
 }
