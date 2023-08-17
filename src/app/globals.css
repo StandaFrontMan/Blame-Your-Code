@@ -1,0 +1,14 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+.gg {
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+
+
+
+
+
