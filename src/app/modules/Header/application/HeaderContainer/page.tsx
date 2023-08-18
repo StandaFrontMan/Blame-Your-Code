@@ -2,7 +2,7 @@ import Link from "next/link";
 import HeaderAuthSection from "../HeaderAuthSection/HeaderAuthSection";
 import { ISession } from "../Isession";
 
-export default function HeaderContainer({ session }: ISession) {
+export default function HeaderContainer() {
     return (
         <nav className="px-2">
             <div className="flex">
@@ -18,7 +18,7 @@ export default function HeaderContainer({ session }: ISession) {
 
                 </ul>
 
-                <HeaderAuthSection session={session}/>
+                <HeaderAuthSection />
 
             </div>            
         </nav>
