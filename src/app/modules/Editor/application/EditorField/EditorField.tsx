@@ -7,16 +7,16 @@ import { handleEditorChange } from '../../domain/HandlerEditorChange';
 
 const EditorField = () => {
 
-    const [code, setCode] = useState<string>('');
+  const [code, setCode] = useState<string>('');
 
   return (
     <Editor
         className='border rounded p-2 '
-        defaultLanguage='javascript'
+        defaultLanguage='typescript'
         defaultValue='// import { confidence } from @YourSelf'
         width='50%'
         height='auto'
-        theme='dark'
+        theme='vs-dark'
         value={code}
         onChange={(value) => handleEditorChange(value, setCode)}
     />
