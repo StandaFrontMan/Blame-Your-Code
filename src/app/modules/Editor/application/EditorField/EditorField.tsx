@@ -11,11 +11,11 @@ const EditorField = () => {
 
   return (
     <Editor
-        className='border rounded p-2 border-blue-500'
+        className='border rounded p-2 '
         defaultLanguage='javascript'
         defaultValue='// import { confidence } from @YourSelf'
-        height='70vh'
         width='50%'
+        height='auto'
         theme='dark'
         value={code}
         onChange={(value) => handleEditorChange(value, setCode)}
