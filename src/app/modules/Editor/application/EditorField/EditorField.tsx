@@ -1,26 +1,33 @@
 'use client'
 
-import { Editor, OnChange } from '@monaco-editor/react'
-import React, { useState } from 'react'
-import { handleEditorChange } from '../../domain/HandlerEditorChange';
-
+import { Editor } from "@monaco-editor/react";
+import { useState } from "react";
+import { files } from "../../infrastructure/EditorLanguages";
+import SelectedMenu from "@/app/components/Make an Blame/SelectedMenu";
 
 const EditorField = () => {
 
-  const [code, setCode] = useState<string>('');
+  const [selectedFile, setSelectedFile] = useState('script.js');
+  const selectedFileData = files[selectedFile];
 
   return (
-    <Editor
+    <>
+      <SelectedMenu
+        selectedFile={selectedFile}
+        setSelectedFile={setSelectedFile}
+      />
+      <Editor
         className='border rounded p-2 '
-        defaultLanguage='typescript'
-        defaultValue='// import { confidence } from @YourSelf'
+        theme="vs-dark"
+        path={selectedFileData.name}
+        defaultLanguage={selectedFileData.language}
+        defaultValue={selectedFileData.value}
         width='50%'
         height='auto'
-        theme='vs-dark'
-        value={code}
-        onChange={(value) => handleEditorChange(value, setCode)}
-    />
+      />
+    </>
   )
 }
+
 
 export default EditorField
