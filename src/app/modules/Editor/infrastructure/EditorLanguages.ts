@@ -8,16 +8,16 @@ export const files: Record<string, FileData> = {
     'script.js': {
       name: 'script.js',
       language: 'javascript',
-      value: 'js',
+      value: '// You are coding in JavaScript',
     },
-    'style.css': {
-      name: 'style.css',
-      language: 'css',
-      value: 'css',
+    'java.ja': {
+      name: 'java.ja',
+      language: 'java',
+      value: '// You are coding in Java',
     },
-    'index.html': {
-      name: 'index.html',
-      language: 'html',
-      value: 'html',
+    'python.py': {
+      name: 'python.py',
+      language: 'python',
+      value: '# You are coding in Python',
     },
   };

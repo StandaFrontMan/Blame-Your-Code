@@ -13,8 +13,9 @@ const SelectedMenu = ({ selectedFile, setSelectedFile }: SelectedMenuProps) => {
         onChange={(e) => setSelectedFile(e.target.value)}
     >
         <option value="script.js">JS</option>
-        <option value="style.css">style.css</option>
-        <option value="index.html">index.html</option>
+        <option value="python.py">PY</option>
+        <option value="java.ja">Java</option>
+
   </select>
   )
 }
