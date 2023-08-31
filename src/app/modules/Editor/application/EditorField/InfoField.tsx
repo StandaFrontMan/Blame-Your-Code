@@ -1,3 +1,4 @@
+import BlameButton from '@/app/components/Make an Blame/BlameButton';
 import SelectedMenu from '@/app/components/Make an Blame/SelectedMenu'
 import React from 'react'
 
