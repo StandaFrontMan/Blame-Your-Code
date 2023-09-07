@@ -1,8 +1,9 @@
 import React from 'react'
+import SubmitRegistrationFormButton from './SubmitRegistrationFormButton'
 
 const RegistrationForm = () => {
   return (
-    <form action="">
+    <form className='flex flex-col justify-center items-center' action="">
         <div className='px-2 py-2 mx-2 my-2 flex flex-col justify-center items-center'>
             <input
                 className='px-2 py-2 mx-2 my-1 text-gray-800 bg-blue-500 hover:bg-blue-600 rounded-lg duration-150 outline-none placeholder-white'
@@ -25,6 +26,9 @@ const RegistrationForm = () => {
                 name='password'
                 required
             />
+        </div>
+        <div>
+            <SubmitRegistrationFormButton />
         </div>
     </form>
   )
