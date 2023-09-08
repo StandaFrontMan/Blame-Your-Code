@@ -1,19 +1,18 @@
 import { User } from "next-auth";
-import { users } from "../infrastructure/users";
 
 export async function authorizeFunction(credentials: Record<"password" | "email", string> | undefined): Promise<User | null> {
     
-    if (!credentials?.email || !credentials.password) {
+    if (!credentials?.email || !credentials.password) { // Проверка пустого
         return null
     }
 
-    const currentUser = users.find(user => user.email === credentials.email);
+    try {
+        const response = await fetch(`${process.env.SERVER_URL_BASE}/user/${credentials.email}/${credentials.password}`); // обращение к серверу
 
-    if (currentUser && currentUser.password === credentials.password) {
-        const {password, ...userwithiutPassword} = currentUser;
-
-        return userwithiutPassword as User;
+        const data = await response.json();
+        
+        return data as User; // возврат объекта как тип User
+    } catch (error) {
+        return null
     }
-
-    return null;
 }
