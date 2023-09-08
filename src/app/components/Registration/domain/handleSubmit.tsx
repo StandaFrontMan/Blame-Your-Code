@@ -15,7 +15,7 @@ const handleSubmit: FormEventHandler<HTMLFormElement> = async (event) => {
         password: formData.get('password'),
         photo: 1
     };
-
+    // ДОДЕЛАТЬ РЕДИРЕКТ, ПЕРЕПИСАТЬ ФАЙЛ С TSX НА TS
     try {
         const response = await fetch('https://blame-your-code-production.up.railway.app/user', {
             method: 'POST',
