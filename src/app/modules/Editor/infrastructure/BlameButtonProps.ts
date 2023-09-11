@@ -7,4 +7,6 @@ export interface BlameButtonProps {
     selectedFileData: {
       language: string;
     };
+    title: string;
+    comments: string
   }

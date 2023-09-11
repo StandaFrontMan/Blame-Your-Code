@@ -1,10 +1,9 @@
 export interface IMockPost {
-    // id: number;
-    user: string | null | undefined;
+    userId: number;
     language: string;
     code: string;
-    // title: string;
-    // comment: string;
+    title: string;
+    comment: string;
 }
 
 

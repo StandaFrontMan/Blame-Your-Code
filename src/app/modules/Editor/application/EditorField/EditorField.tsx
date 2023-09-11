@@ -2,7 +2,7 @@
 
 import { Editor, Monaco } from "@monaco-editor/react";
 import { useRef, useState } from "react";
-import { files } from "../../infrastructure/EditorLanguages";
+import { files } from "../../infrastructure/EditorLanguages"; 
 import InfoField from "./InfoField";
 import BlameButton from "@/app/components/Make an Blame/BlameButton";
 import { useSession } from "next-auth/react";
@@ -10,6 +10,9 @@ import { useSession } from "next-auth/react";
 const EditorField = () => {
 
   const { data: session } = useSession()
+
+  console.log(session);
+  
 
   const [selectedFile, setSelectedFile] = useState('script.js');
   const selectedFileData = files[selectedFile];
@@ -39,15 +42,18 @@ const EditorField = () => {
         <InfoField
           selectedFile={selectedFile}
           setSelectedFile={setSelectedFile}
-        />
-      </div>
-    </div>
-    <div className="flex items-center justify-center">
-        <BlameButton
           session={session}
           editorRef={editorRef}
           selectedFileData={selectedFileData}
         />
+      </div>
+    </div>
+    <div className="flex items-center justify-center">
+        {/* <BlameButton
+          session={session}
+          editorRef={editorRef}
+          selectedFileData={selectedFileData}
+        /> */}
     </div>
     </>
   )
