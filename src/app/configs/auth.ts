@@ -15,7 +15,6 @@ export const authConfig: AuthOptions = {
                 password: { label: 'password', type: 'password', required: true },
             },
             async authorize(credentials) {
-
                 return await authorizeFunction(credentials)
             }
         })
