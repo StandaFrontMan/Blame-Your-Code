@@ -1,16 +1,31 @@
 'use client'
 
-import { Editor } from "@monaco-editor/react";
-import { useState } from "react";
-import { files } from "../../infrastructure/EditorLanguages";
+import { Editor, Monaco } from "@monaco-editor/react";
+import { useRef, useState } from "react";
+import { files } from "../../infrastructure/EditorLanguages"; 
 import InfoField from "./InfoField";
+import BlameButton from "@/app/components/Make an Blame/BlameButton";
+import { useSession } from "next-auth/react";
 
 const EditorField = () => {
 
+  const { data: session } = useSession()
+
+  console.log(session);
+  
+
   const [selectedFile, setSelectedFile] = useState('script.js');
   const selectedFileData = files[selectedFile];
+  
+
+  const editorRef = useRef<Monaco | null>(null);
+
+  function handleEditorDidMount(editor: Monaco) {
+    editorRef.current = editor;
+  }
 
   return (
+    <>
     <div className="flex  w-full h-full">
       <div className="w-2/3 rounded-lg">
         <Editor
@@ -20,15 +35,27 @@ const EditorField = () => {
           path={selectedFileData.name}
           defaultLanguage={selectedFileData.language}
           defaultValue={selectedFileData.value}
+          onMount={handleEditorDidMount}
         />
       </div>
       <div className="w-1/3 flex flex-col items-center py-2">
         <InfoField
           selectedFile={selectedFile}
           setSelectedFile={setSelectedFile}
+          session={session}
+          editorRef={editorRef}
+          selectedFileData={selectedFileData}
         />
       </div>
     </div>
+    <div className="flex items-center justify-center">
+        {/* <BlameButton
+          session={session}
+          editorRef={editorRef}
+          selectedFileData={selectedFileData}
+        /> */}
+    </div>
+    </>
   )
 }
 
