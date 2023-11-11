@@ -3,15 +3,12 @@ import { IUser } from "../../domain/user_credentials/IUser";
 import { UserRepository } from "../../domain/user_credentials/UserRepository";
 
 export class UserRepositoryImpl implements UserRepository {
-  async getToken(
-    email: string | undefined,
-    password: string | undefined
-  ): Promise<IToken> {
+  async getToken(email: string | undefined, password: string | undefined) {
     if (email === null || password === null) {
       throw new Error("Email and Password are required");
     }
     const response = await fetch(
-      `https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/SignIn`,
+      "http://59k4pfj3-8080.euw.devtunnels.ms/api/Account/SignIn",
       {
         method: "POST",
         headers: {
@@ -31,9 +28,9 @@ export class UserRepositoryImpl implements UserRepository {
     return data;
   }
 
-  async getUserData(token: any): Promise<IUser> {
+  async getUserData(token: any) {
     const response = await fetch(
-      `https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/Me`,
+      "https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/Me",
       {
         method: "GET",
         headers: {
