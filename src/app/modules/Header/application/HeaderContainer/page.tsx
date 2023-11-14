@@ -16,6 +16,10 @@ export default function HeaderContainer() {
                         <Link href='/pages/aboutPage'>About</Link>
                     </li>
 
+                    <li className="inline-block py-3 px-2 border-b-2 border-transparent hover:text-blue-600 hover:border-blue-600 duration-150">
+                        <Link href='/pages/editorPage'>Editor</Link>
+                    </li>
+
                 </ul>
 
                 <HeaderAuthSection />
