@@ -1,3 +1,5 @@
+import { IToken } from "../../domain/user_credentials/IToken";
+import { IUser } from "../../domain/user_credentials/IUser";
 import { UserRepository } from "../../domain/user_credentials/UserRepository";
 
 export class UserRepositoryImpl implements UserRepository {
@@ -19,10 +21,14 @@ export class UserRepositoryImpl implements UserRepository {
       }
     );
     const data = await response.json();
-    return data.token;
+    this.saveTokenToLocalStorage(data.token);
   }
 
-  async getUserData(token: string) {
+  async getUserData(): Promise<IUser> {
+    const token = this.getTokenFromLocalStorage();
+
+    console.log(token);
+
     if (token === null) {
       throw new Error("There is no token");
     }
@@ -38,5 +44,13 @@ export class UserRepositoryImpl implements UserRepository {
     );
     const data = await response.json();
     return data;
+  }
+
+  getTokenFromLocalStorage(): Promise<IToken> {
+    return JSON.parse(localStorage.getItem("token") || "[]");
+  }
+
+  private async saveTokenToLocalStorage(token: string) {
+    localStorage.setItem("token", JSON.stringify(token));
   }
 }

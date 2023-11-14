@@ -3,6 +3,7 @@
 import CredentialsAuthFormView from "./CredentialsAuthForm.view";
 import React from "react";
 import { diContainer } from "@/app/page";
+import { IUser } from "@/app/modules/Auth/domain/user_credentials/IUser";
 
 export default function CredentialsAuthFormContainer() {
   const repository = diContainer.getUserRepository();
@@ -20,14 +21,12 @@ export default function CredentialsAuthFormContainer() {
     });
   };
 
-  const handleSubmit = (e: any) => {
+  const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    repository.getToken(formData.email, formData.password).then((token) => {
-      repository.getUserData(token).then((userData) => {
-        console.log(userData); // end
-      });
-    });
+    repository.getToken(formData.email, formData.password);
+    const userData: IUser = await repository.getUserData();
+    console.log(userData);
   };
 
   return (

@@ -2,7 +2,9 @@ import { IToken } from "./IToken";
 import { IUser } from "./IUser";
 
 export interface UserRepository {
-  getToken(email: string, password: string): Promise<string>;
+  getToken(email: string, password: string): Promise<void>;
 
-  getUserData(token: string): Promise<IUser>;
+  getUserData(): Promise<IUser>;
+
+  getTokenFromLocalStorage(): Promise<IToken>;
 }
