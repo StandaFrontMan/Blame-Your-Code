@@ -1,5 +1,3 @@
-import { IToken } from "../../domain/user_credentials/IToken";
-import { IUser } from "../../domain/user_credentials/IUser";
 import { UserRepository } from "../../domain/user_credentials/UserRepository";
 
 export class UserRepositoryImpl implements UserRepository {
@@ -8,45 +6,37 @@ export class UserRepositoryImpl implements UserRepository {
       throw new Error("Email and Password are required");
     }
     const response = await fetch(
-      "https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/SignIn",
+      `https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/SignIn`,
       {
         method: "POST",
         headers: {
           "Content-Type": "application/json",
         },
         body: JSON.stringify({
-          // Преобразуйте объект в JSON-строку
           email: email,
           password: password,
         }),
       }
     );
     const data = await response.json();
-
-    console.log("token in impl", data);
-
     return data.token;
   }
 
   async getUserData(token: string) {
-    console.log("Token in begining getUserData", token);
-
     if (token === null) {
       throw new Error("There is no token");
     }
-
     const response = await fetch(
-      "https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/Me",
+      `https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/Me`,
       {
+        method: "GET",
         headers: {
           Authorization: `Bearer ${token}`,
+          "Content-Type": "application/json",
         },
       }
     );
-
     const data = await response.json();
-    console.log("artem", data);
-
     return data;
   }
 }

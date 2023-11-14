@@ -2,7 +2,7 @@ import { IToken } from "./IToken";
 import { IUser } from "./IUser";
 
 export interface UserRepository {
-  getToken(email: string, password: string): Promise<IToken>;
+  getToken(email: string, password: string): Promise<string>;
 
-  getUserData(token: any): Promise<IUser>;
+  getUserData(token: string): Promise<IUser>;
 }

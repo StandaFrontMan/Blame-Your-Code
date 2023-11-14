@@ -1,7 +1,5 @@
-import CredentialsAuthForm from "@/app/components/authtorization/CredentialsAuthForm";
 import GoogleAuthButton from "@/app/components/authtorization/GoogleAuthButton";
 import CredentialsAuthFormContainer from "@/app/components/authtorization/credentials_auth_form/CredentialsAuthForm.container";
-import CredentialsAuthFormView from "@/app/components/authtorization/credentials_auth_form/CredentialsAuthForm.view";
 
 export default async function AuthPage() {
   return (
