@@ -1,5 +1,5 @@
 import { AuthRepository } from "../../domain/user_credentials/AuthRepository";
-import { IToken } from "../../domain/user_credentials/IToken";
+import { TokenEntity } from "./TokenEntity";
 
 export class AuthRepositoryImpl implements AuthRepository {
   async getToken(email: string, password: string) {
@@ -19,7 +19,7 @@ export class AuthRepositoryImpl implements AuthRepository {
         }),
       }
     );
-    const data = await response.json();
+    const data: TokenEntity = await response.json();
     this.saveTokenToLocalStorage(data.token);
   }
 
