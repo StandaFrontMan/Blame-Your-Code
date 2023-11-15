@@ -5,6 +5,4 @@ export interface UserRepository {
   getToken(email: string, password: string): Promise<void>;
 
   getUserData(): Promise<IUser>;
-
-  getTokenFromLocalStorage(): Promise<IToken>;
 }

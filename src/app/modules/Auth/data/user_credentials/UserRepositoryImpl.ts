@@ -46,7 +46,7 @@ export class UserRepositoryImpl implements UserRepository {
     return data;
   }
 
-  getTokenFromLocalStorage(): Promise<IToken> {
+  private getTokenFromLocalStorage(): Promise<IToken> {
     return JSON.parse(localStorage.getItem("token") || "[]");
   }
 
