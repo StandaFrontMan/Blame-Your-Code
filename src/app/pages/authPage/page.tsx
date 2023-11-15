@@ -1,5 +1,12 @@
 import GoogleAuthButton from "@/app/components/authtorization/GoogleAuthButton";
 import CredentialsAuthFormContainer from "@/app/components/authtorization/credentials_auth_form/CredentialsAuthForm.container";
+import { Metadata } from "next";
+
+export async function generateMetadata(): Promise<Metadata> {
+  return {
+    title: "Auth",
+  };
+}
 
 export default async function AuthPage() {
   return (

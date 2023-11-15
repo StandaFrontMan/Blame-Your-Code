@@ -1,5 +1,10 @@
+import { Metadata } from "next";
 import { AppDiContainer } from "./di/AppDiContainer";
 import { DiContainer } from "./di/DiContainer";
+
+export const metadata: Metadata = {
+  title: "Home",
+};
 
 export const diContainer: DiContainer = new AppDiContainer();
 
