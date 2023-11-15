@@ -1,7 +1,7 @@
-import { UserRepository } from "../modules/Auth/domain/user_credentials/UserRepository";
+import { AuthRepository } from "../modules/Auth/domain/user_credentials/AuthRepository";
 import { UserDataRepository } from "../modules/repositories/user_data_repository/domain/UserDataRepository";
 
 export interface DiContainer {
-  getUserRepository(): UserRepository;
+  getAuthRepository(): AuthRepository;
   getUserDataRepository(): UserDataRepository;
 }

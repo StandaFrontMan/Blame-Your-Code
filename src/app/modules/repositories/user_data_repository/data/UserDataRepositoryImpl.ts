@@ -1,8 +1,8 @@
 import { UserDataRepository } from "../domain/UserDataRepository";
-import { TokenEntity } from "./TokenEntity";
+import { UserEntity } from "./UserEntity";
 
 export class UserDataRepositoryImpl implements UserDataRepository {
-  async getUserData(): Promise<TokenEntity> {
+  async getUserData(): Promise<UserEntity> {
     const token = this.getTokenFromLocalStorage();
 
     if (token === null) {
@@ -20,12 +20,10 @@ export class UserDataRepositoryImpl implements UserDataRepository {
       }
     );
     const data = await response.json();
-    console.log("userData from new repo", data);
-
     return data;
   }
 
-  private getTokenFromLocalStorage(): Promise<TokenEntity> {
+  private getTokenFromLocalStorage(): Promise<UserEntity> {
     return JSON.parse(localStorage.getItem("token") || "[]");
   }
 }

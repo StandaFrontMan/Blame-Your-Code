@@ -1,5 +1,5 @@
-import { Token } from "./Token";
+import { User } from "./User";
 
 export interface UserDataRepository {
-  getUserData(): Promise<Token>;
+  getUserData(): Promise<User>;
 }
