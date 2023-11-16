@@ -1,7 +1,7 @@
-import { IUser } from "../../data/IUser";
+import { User } from "../../domain/User";
 
 type Props = {
-  user: IUser | null | undefined;
+  user: User | null | undefined;
 };
 
 export default function UserDataView(user: Props) {

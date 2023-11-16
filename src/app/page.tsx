@@ -1,12 +1,11 @@
+"use client";
+
 import { Metadata } from "next";
-import { AppDiContainer } from "./di/AppDiContainer";
-import { DiContainer } from "./di/DiContainer";
+import React from "react";
 
 export const metadata: Metadata = {
   title: "Home",
 };
-
-export const diContainer: DiContainer = new AppDiContainer();
 
 export default function Home() {
   return (

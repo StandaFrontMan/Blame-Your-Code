@@ -2,20 +2,23 @@
 
 import { useEffect, useState } from "react";
 import UserDataView from "./UserData.view";
-import { diContainer } from "@/app/page";
 import { User } from "../../domain/User";
+import { useInjection } from "@/app/core/hooks/UseInjection";
 
-export default function UserDataContainer() {
+export default function UserDataContainer({}) {
+  const { getUserDataRepository } = useInjection();
+
+  const userDataRepository = getUserDataRepository();
+
   const [user, setUser] = useState<User | null>();
-  const repository = diContainer.getUserDataRepository();
 
   useEffect(() => {
     const fetchData = async () => {
-      const user = await repository.getUserData();
+      const user = await userDataRepository.getUserData();
       setUser(user);
     };
     fetchData();
-  }, [repository]);
+  }, [userDataRepository]);
 
   return <UserDataView user={user} />;
 }
