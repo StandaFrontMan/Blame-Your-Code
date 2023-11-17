@@ -2,7 +2,7 @@ type Props = {
   handleChange: (e: any) => void;
   handleSubmit: (e: any) => void;
   formData: {
-    userName: string;
+    username: string;
     email: string;
     password: string;
     confirmPassword: string;
@@ -25,7 +25,7 @@ export default function RegistrationFormView({
           placeholder="User Name..."
           type="name"
           name="name"
-          value={formData.userName}
+          value={formData.username}
           onChange={handleChange}
           required
         />

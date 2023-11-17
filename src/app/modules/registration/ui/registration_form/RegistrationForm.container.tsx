@@ -3,7 +3,7 @@ import RegistrationFormView from "./RegistrationForm.view";
 
 export default function RegistrationFormContainer() {
   const [formData, setFormData] = React.useState({
-    userName: "",
+    username: "",
     email: "",
     password: "",
     confirmPassword: "",
