@@ -1,7 +1,14 @@
+"use client";
+
 import React from "react";
 import RegistrationFormView from "./RegistrationForm.view";
+import { useInjection } from "@/app/core/hooks/UseInjection";
 
 export default function RegistrationFormContainer() {
+  const { getUserRegistrationRepository } = useInjection();
+
+  const userRegistrationRepository = getUserRegistrationRepository();
+
   const [formData, setFormData] = React.useState({
     username: "",
     email: "",
@@ -19,6 +26,13 @@ export default function RegistrationFormContainer() {
 
   const handleSubmit = async (e: any) => {
     e.preventDefault();
+
+    userRegistrationRepository.signUpUser(
+      formData.username,
+      formData.email,
+      formData.password,
+      formData.confirmPassword
+    );
   };
 
   return (

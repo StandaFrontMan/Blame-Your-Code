@@ -9,7 +9,12 @@ export class UserRegistrationRepositoryImpl
     password: string,
     confirmPassword: string
   ): Promise<void> {
-    if (!username && !email && !password && !confirmPassword) {
+    if (
+      username === null &&
+      email === null &&
+      password === null &&
+      confirmPassword === null
+    ) {
       throw new Error("At least one parameter is not specified");
     }
     const response = await fetch(
@@ -28,6 +33,8 @@ export class UserRegistrationRepositoryImpl
       }
     );
     const data = await response.json();
+    console.log(data);
+
     return data;
   }
 }
