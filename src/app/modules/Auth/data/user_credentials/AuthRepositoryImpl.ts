@@ -7,7 +7,7 @@ export class AuthRepositoryImpl implements AuthRepository {
       throw new Error("Email and Password are required");
     }
     const response = await fetch(
-      `https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/SignIn`,
+      `${process.env.NEXT_PUBLIC_SERVER_BASE}Account/SignIn`,
       {
         method: "POST",
         headers: {
