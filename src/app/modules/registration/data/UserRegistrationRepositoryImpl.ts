@@ -18,7 +18,7 @@ export class UserRegistrationRepositoryImpl
       throw new Error("At least one parameter is not specified");
     }
     const response = await fetch(
-      "https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/SignUp",
+      `${process.env.NEXT_PUBLIC_SERVER_BASE}Account/SignUp`,
       {
         method: "POST",
         headers: {
