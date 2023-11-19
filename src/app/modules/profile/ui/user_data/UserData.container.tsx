@@ -18,7 +18,7 @@ export default function UserDataContainer({}) {
       setUser(user);
     };
     fetchData();
-  }, [userDataRepository]);
+  }, []);
 
   return <UserDataView user={user} />;
 }
