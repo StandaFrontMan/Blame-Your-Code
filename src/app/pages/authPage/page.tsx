@@ -1,5 +1,6 @@
 import GoogleAuthButton from "@/app/components/authtorization/GoogleAuthButton";
 import CredentialsAuthFormContainer from "@/app/components/authtorization/credentials_auth_form/CredentialsAuthForm.container";
+import ModalContainer from "@/app/components/common/modal/Modal.container";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -18,6 +19,10 @@ export default async function AuthPage() {
         <GoogleAuthButton />
         <div className="mx-2 my-2 text-xl">or</div>
         <CredentialsAuthFormContainer />
+
+        <ModalContainer>
+          <CredentialsAuthFormContainer />
+        </ModalContainer>
       </div>
     </main>
   );
