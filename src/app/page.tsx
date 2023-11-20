@@ -2,7 +2,6 @@
 
 import { Metadata } from "next";
 import React from "react";
-import HeaderView from "./modules/Header/application/HeaderView/page";
 import HomeHeaderContainer from "./components/headers/header_on_home_page/HomeHeader.container";
 
 export const metadata: Metadata = {

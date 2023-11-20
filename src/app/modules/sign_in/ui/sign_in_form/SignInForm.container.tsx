@@ -30,7 +30,7 @@ export default function SignInFormContainer() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    authRepository.getToken(formData.email, formData.password);
+    await authRepository.getToken(formData.email, formData.password);
     const userData: User = await userDataRepository.getUserData();
     console.log(userData);
 
