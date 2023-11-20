@@ -1,12 +1,12 @@
 "use client";
 
-import CredentialsAuthFormView from "./CredentialsAuthForm.view";
 import React from "react";
 import { useRouter } from "next/navigation";
 import { User } from "@/app/modules/sign_in/domain/User";
 import { useInjection } from "@/app/core/hooks/UseInjection";
+import SignInFormView from "./SignInForm.view";
 
-export default function CredentialsAuthFormContainer({}) {
+export default function SignInFormContainer() {
   const { getAuthRepository, getUserDataRepository } = useInjection();
 
   const authRepository = getAuthRepository();
@@ -38,7 +38,7 @@ export default function CredentialsAuthFormContainer({}) {
   };
 
   return (
-    <CredentialsAuthFormView
+    <SignInFormView
       formData={formData}
       handleChange={handleChange}
       handleSubmit={handleSubmit}

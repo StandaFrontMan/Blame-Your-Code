@@ -1,13 +1,16 @@
 "use client";
 
 import React from "react";
-import RegistrationFormView from "./RegistrationForm.view";
 import { useInjection } from "@/app/core/hooks/UseInjection";
+import RegistrationFormView from "./RegistrationForm.view";
+import { useRouter } from "next/navigation";
 
 export default function RegistrationFormContainer() {
   const { getUserRegistrationRepository } = useInjection();
 
   const userRegistrationRepository = getUserRegistrationRepository();
+
+  const router = useRouter();
 
   const [formData, setFormData] = React.useState({
     username: "",
@@ -33,6 +36,8 @@ export default function RegistrationFormContainer() {
       formData.password,
       formData.confirmPassword
     );
+
+    router.push("/pages/profilePage");
   };
 
   return (

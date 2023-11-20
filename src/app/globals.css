@@ -8,7 +8,11 @@
   align-items: center;
 }
 
+body {
+  background-color: #2c2f33;
+}
 
-
-
-
+input[type="text"]:focus ~ .input-text,
+input[type="text"]:not(:placeholder-shown) ~ .input-text {
+  @apply text-blue-500 transform -translate-y-10 -translate-x-2 scale-75;
+}
