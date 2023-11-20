@@ -2,10 +2,11 @@
 
 import Link from "next/link";
 import { ISession } from "../Isession";
-import SignOutButton from "@/app/components/Header/SignOutButton";
-import SignInButton from "@/app/components/Header/SignInButton";
+
 import { useSession } from "next-auth/react";
 import ModalContainer from "@/app/components/common/modal/Modal.container";
+import SignOutButton from "@/app/components/Heade/SignOutButton";
+import SignInButton from "@/app/components/Heade/SignInButton";
 
 export default function HeaderAuthSection() {
   const session = useSession();
