@@ -1,4 +1,4 @@
-import { AuthRepository } from "../modules/Auth/domain/user_credentials/AuthRepository";
+import { AuthRepository } from "../modules/sign_in/domain/user_credentials/AuthRepository";
 import { UserDataRepository } from "../core/user/domain/UserDataRepository";
 import { UserRegistrationRepository } from "../modules/registration/domain/UserRegistrationRepository";
 
