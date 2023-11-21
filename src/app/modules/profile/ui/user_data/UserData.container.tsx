@@ -13,13 +13,16 @@ export default function UserDataContainer() {
 
   const [user, setUser] = useState<User | null>();
 
+  console.log(user);
+
   useEffect(() => {
     const fetchData = async () => {
       const user = await userDataRepository.getUserData();
       setUser(user);
     };
+    console.log("монтирование");
+
     fetchData();
-    // eslint-disable-next-line react-hooks/exhaustive-deps
   }, []);
 
   return <UserDataView user={user} />;

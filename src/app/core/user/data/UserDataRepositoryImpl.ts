@@ -23,7 +23,8 @@ export class UserDataRepositoryImpl implements UserDataRepository {
     return data;
   }
 
-  private getTokenFromLocalStorage(): Promise<UserEntity> {
-    return JSON.parse(localStorage.getItem("token") || "[]");
+  private getTokenFromLocalStorage(): string | null {
+    const token = localStorage.getItem("token");
+    return token !== null ? JSON.parse(token) : null;
   }
 }
