@@ -1,23 +1,24 @@
 import Link from "next/link";
+import styles from "./ShortDescription.module.scss";
 
 export default function ShortDescriptionView() {
   return (
-    <div className="flex-col text-center">
-      <h1 className="bg-gradient-to-r from-orange-400 via-pink-500 to-gray-950 bg-[position:_0%_0%] text-transparent bg-clip-text hover:bg-[position:_200%_50%] bg-[size:_200%] transition-all duration-500">
-        <span className="text-6xl">Refine your coding process</span>
+    <div className={styles.parent}>
+      <h1 className={styles.mainTitle}>
+        <span className={styles.span}>Refine your coding process</span>
         <br />
-        <span className="text-6xl">at</span>
+        <span className={styles.span}>at</span>
         <br />
-        <span className="text-6xl ">Blame Your Code</span>
+        <span className={styles.span}>Blame Your Code</span>
       </h1>
-      <div className="mt-4">
-        <p className="text-2xl">
+      <div className={styles.descriptionContainer}>
+        <p className={styles.textDescription}>
           A platform where every line of code is an opportunity for growth.
           Submit your work, embrace constructive critiques, and elevate your
           skills through collaborative code reviews.
         </p>
       </div>
-      <button className="w-1/4 p-2 my-4 justify-center bg-black text-white rounded-lg hover:bg-sky-700 transition-all duration-500">
+      <button className={styles.button}>
         <Link href="/pages/registration">Start blaming!</Link>
       </button>
     </div>
