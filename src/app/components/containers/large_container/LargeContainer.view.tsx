@@ -3,5 +3,5 @@ type Props = {
 };
 
 export default function LargeContainerView({ children }: Props) {
-  return <div className="mx-auto w-3/4 border-2">{children}</div>;
+  return <div className="mx-auto w-3/4">{children}</div>;
 }

@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HomeHeaderView() {
   return (
-    <nav className="px-2 rounded-b-md bg-gray-700">
+    <nav className="px-2 mb-6 rounded-b-md bg-gray-700">
       <div className="flex">
         <h3 className="inline-block py-3 px-2 border-b-2 border-transparent ">
           Blame Your Code
