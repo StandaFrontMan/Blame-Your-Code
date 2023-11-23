@@ -20,7 +20,7 @@ export default function PasswordChangeFieldView({
       <div>
         <p>Current Password: {}</p>
 
-        <input type="text" onChange={handleChange} />
+        <input type="password" onChange={handleChange} />
       </div>
       <button>Submit</button>
     </form>

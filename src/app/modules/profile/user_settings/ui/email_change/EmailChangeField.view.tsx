@@ -20,7 +20,7 @@ export default function EmailChangeFieldView({
       <div>
         <p>Current Email: {curUserData?.email}</p>
 
-        <input type="text" onChange={handleChange} />
+        <input type="email" onChange={handleChange} />
       </div>
       <button>Submit</button>
     </form>
