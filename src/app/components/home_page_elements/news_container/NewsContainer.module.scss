@@ -1,15 +1,15 @@
+/* .contanier {
+  @apply;
+} */
+
 .headerDate {
   @apply text-center text-white text-2xl font-bold;
 }
 
 .updatesArea {
   @apply flex;
-}
 
-.linksArea {
-  @apply flex justify-around mt-2;
-}
-
-.link {
-  @apply text-center hover:text-green-600 duration-200;
+  /* @media screen and (ma) {
+    
+  } */
 }
