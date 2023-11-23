@@ -1,16 +1,28 @@
-export default function EmailChangeFieldView() {
+import { UserEntity } from "../../domain/UserEntity";
+
+type Props = {
+  curUserData: UserEntity | null | undefined;
+  handleChange: (e: any) => void;
+  handleSubmit: (e: any) => void;
+};
+
+export default function EmailChangeFieldView({
+  curUserData,
+  handleChange,
+  handleSubmit,
+}: Props) {
   return (
-    <div>
+    <form onSubmit={handleSubmit}>
       <div>
-        <p>You can Change Email here</p>
+        <h2>You can change Email here</h2>
       </div>
+
       <div>
-        <input type="text" />
-        <input type="text" />
+        <p>Current Email: {curUserData?.email}</p>
+
+        <input type="text" onChange={handleChange} />
       </div>
-      <div>
-        <button>Change Email</button>
-      </div>
-    </div>
+      <button>Submit</button>
+    </form>
   );
 }
