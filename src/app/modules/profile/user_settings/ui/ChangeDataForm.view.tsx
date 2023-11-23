@@ -1,4 +1,5 @@
 import EmailChangeFieldContanier from "./email_change/EmailChangeField.contaneir";
+import UsernameChangeFieldContanier from "./username_change/UsernameChangeField.container";
 
 export default function ChangeDataFormView() {
   return (
@@ -6,7 +7,9 @@ export default function ChangeDataFormView() {
       <div>
         <EmailChangeFieldContanier />
       </div>
-      <div></div>
+      <div>
+        <UsernameChangeFieldContanier />
+      </div>
     </div>
   );
 }
