@@ -1,0 +1,29 @@
+.form {
+  @apply px-5;
+}
+
+.titleBlock {
+  @apply px-2 pt-2 mb-2;
+}
+
+.title {
+  @apply text-xl font-normal text-white;
+}
+
+.inputBlock {
+  @apply px-2;
+}
+
+.input {
+  @apply px-3 pt-3 mb-3 w-1/2 rounded-sm;
+}
+
+.buttonBlock {
+  @apply px-2 pb-2 mt-2;
+}
+
+.button {
+  @apply w-1/4 p-2 justify-center
+  bg-gray-800 text-white rounded-lg
+  hover:bg-green-600 transition-all duration-500;
+}

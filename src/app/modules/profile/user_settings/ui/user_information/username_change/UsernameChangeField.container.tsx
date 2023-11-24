@@ -1,7 +1,7 @@
 "use client";
 
 import React from "react";
-import { UserEntity } from "../../domain/UserEntity";
+import { UserEntity } from "../../../domain/UserEntity";
 import { useInjection } from "@/app/core/hooks/UseInjection";
 import UsernameChangeFieldView from "./UsernameChangeField.view";
 

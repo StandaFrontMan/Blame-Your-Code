@@ -4,14 +4,17 @@ import UsernameChangeFieldContanier from "./username_change/UsernameChangeField.
 
 export default function ChangeDataFormView() {
   return (
-    <div>
-      <div>
+    <div className="flex-auto my-5 px-5">
+      <h2 className="text-2xl font-medium text-green-500 px-2 my-2">
+        Information
+      </h2>
+      <div className="w-1/2 my-2 bg-gray-900 rounded-xl">
         <EmailChangeFieldContanier />
       </div>
-      <div>
+      <div className="w-1/2 my-2 bg-gray-900 rounded-xl">
         <UsernameChangeFieldContanier />
       </div>
-      <div>
+      <div className="w-1/2 my-2 bg-gray-900 rounded-xl">
         <PasswordChangeFieldContanier />
       </div>
     </div>
