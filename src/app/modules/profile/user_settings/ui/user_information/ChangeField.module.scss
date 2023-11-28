@@ -1,29 +1,80 @@
+// .form {
+//   @apply px-5 ;
+// }
+
+// .titleBlock {
+//   @apply px-2 pt-2 mb-2;
+// }
+
+// .title {
+//   @apply text-xl font-normal text-white;
+// }
+
+// .inputBlock {
+//   @apply px-2;
+// }
+
+// .input {
+//   @apply px-3 pt-3 mb-3 w-1/2 rounded-sm;
+// }
+
+// .buttonBlock {
+//   @apply px-2 pb-2 mt-2;
+// }
+
+// .button {
+//   @apply w-1/4 p-2 justify-center
+//   bg-gray-800 text-white rounded-lg
+//   hover:bg-green-600 transition-all duration-500;
+// }
+
 .form {
-  @apply px-5;
+  padding: 0 20px;
 }
 
 .titleBlock {
-  @apply px-2 pt-2 mb-2;
+  padding: 8px 8px 0 8px;
+  margin-bottom: 8px;
 }
 
 .title {
-  @apply text-xl font-normal text-white;
+  font-size: 1.25rem;
+  line-height: 1.75rem;
+  font-weight: 400;
+  color: white;
 }
 
 .inputBlock {
-  @apply px-2;
+  padding: 0 8px;
 }
 
 .input {
-  @apply px-3 pt-3 mb-3 w-1/2 rounded-sm;
+  padding-left: 0.75rem /* 12px */;
+  padding-right: 0.75rem /* 12px */;
+  padding-top: 0.75rem /* 12px */;
+  margin-bottom: 0.75rem /* 12px */;
+  width: 50%;
+  border-radius: 0.125rem /* 2px */;
 }
 
 .buttonBlock {
-  @apply px-2 pb-2 mt-2;
+  padding-left: 0.5rem /* 8px */;
+  padding-right: 0.5rem /* 8px */;
+  padding-bottom: 0.5rem /* 8px */;
+  margin-top: 0.5rem /* 8px */;
 }
 
 .button {
-  @apply w-1/4 p-2 justify-center
-  bg-gray-800 text-white rounded-lg
-  hover:bg-green-600 transition-all duration-500;
+  width: 25%;
+  padding: 0.5rem /* 8px */;
+  justify-content: center;
+  --tw-bg-opacity: 1;
+  background-color: rgb(31 41 55 / var(--tw-bg-opacity));
+  color: white;
+  border-radius: 0.5rem /* 8px */;
+  transition: background-color 0.5s;
+}
+
+.button:hover {
+  background-color: #4caf50;
 }
