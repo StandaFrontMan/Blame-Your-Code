@@ -6,6 +6,7 @@ export class AuthRepositoryImpl implements AuthRepository {
     if (email === null || password === null) {
       throw new Error("Email and Password are required");
     }
+
     const response = await fetch(
       `${process.env.NEXT_PUBLIC_SERVER_BASE}Account/SignIn`,
       {

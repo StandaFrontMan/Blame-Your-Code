@@ -7,12 +7,14 @@ type Props = {
     email: string;
     password: string;
   };
+  error: string;
 };
 
 export default function SignInFormView({
   handleChange,
   handleSubmit,
   formData,
+  error,
 }: Props) {
   return (
     <div className="flex items-center justify-center h-screen">
@@ -48,6 +50,10 @@ export default function SignInFormView({
               required
             />
           </div>
+
+          {error && (
+            <div className="text-center text-red-600 mt-2">{error}</div>
+          )}
 
           <button className=" w-full p-2 my-4 bg-black text-white rounded-lg hover:bg-sky-700 transition-all  ">
             Sign in

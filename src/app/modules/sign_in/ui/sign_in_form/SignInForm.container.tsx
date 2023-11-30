@@ -19,6 +19,8 @@ export default function SignInFormContainer() {
     password: "",
   });
 
+  const [error, setError] = React.useState("");
+
   const handleChange = (e: any) => {
     const { name, value } = e.target;
     setFormData({
@@ -30,11 +32,13 @@ export default function SignInFormContainer() {
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
-    await authRepository.getToken(formData.email, formData.password);
-    const userData: User = await userDataRepository.getUserData();
-    console.log(userData);
-
-    router.push("/pages/profilePage");
+    try {
+      await authRepository.getToken(formData.email, formData.password);
+      const userData: User = await userDataRepository.getUserData();
+      router.push("/pages/profilePage");
+    } catch (error) {
+      setError("Wrong Password");
+    }
   };
 
   return (
@@ -42,6 +46,7 @@ export default function SignInFormContainer() {
       formData={formData}
       handleChange={handleChange}
       handleSubmit={handleSubmit}
+      error={error}
     />
   );
 }
