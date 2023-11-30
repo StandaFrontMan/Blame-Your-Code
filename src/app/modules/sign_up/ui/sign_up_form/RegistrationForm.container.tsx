@@ -27,6 +27,10 @@ export default function RegistrationFormContainer() {
     });
   };
 
+  React.useEffect(() => {
+    localStorage.setItem("token", ""); // delete JWT while user rendering Sign In Page
+  });
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
 
