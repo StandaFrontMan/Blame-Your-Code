@@ -29,9 +29,12 @@ export default function SignInFormContainer() {
     });
   };
 
+  React.useEffect(() => {
+    localStorage.setItem("token", ""); // delete JWT while user rendering Sign In Page
+  });
+
   const handleSubmit = async (e: any) => {
     e.preventDefault();
-
     try {
       await authRepository.getToken(formData.email, formData.password);
       const userData: User = await userDataRepository.getUserData();
