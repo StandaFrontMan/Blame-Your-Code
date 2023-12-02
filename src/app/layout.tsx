@@ -4,6 +4,7 @@ import { Inter } from "next/font/google";
 import { Provider } from "./components/SessionProvider/Provider";
 import { useRouter } from "next/router";
 import HeaderContainer from "./components/headers/side_bar/Header.container";
+import HeaderView from "./components/headers/side_bar/Header.view";
 
 const inter = Inter({ subsets: ["latin"] });
 

@@ -1,5 +1,6 @@
+import ExtraLargeContainerContainer from "@/app/components/containers/extra_large_container/ExtraLargeContainer.container";
 import HeaderView from "@/app/components/headers/side_bar/Header.view";
-import ChangeDataFormView from "@/app/modules/profile/user_settings/ui/ChangeDataForm.view";
+import ChangeDataFormView from "@/app/modules/profile/user_settings/ui/user_information/ChangeDataForm.view";
 import { Metadata } from "next";
 
 export async function generateMetadata(): Promise<Metadata> {
@@ -10,10 +11,12 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function UserSettings() {
   return (
-    <main className="mx-10">
-      {/* <HeaderView /> */}
+    <main className="mx-28">
+      <HeaderView />
 
-      <ChangeDataFormView />
+      <ExtraLargeContainerContainer>
+        <ChangeDataFormView />
+      </ExtraLargeContainerContainer>
     </main>
   );
 }

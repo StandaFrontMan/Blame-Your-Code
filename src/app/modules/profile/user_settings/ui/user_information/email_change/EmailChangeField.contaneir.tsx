@@ -3,7 +3,7 @@
 import React from "react";
 import EmailChangeFieldView from "./EmailChangeField.view";
 import { useInjection } from "@/app/core/hooks/UseInjection";
-import { UserEntity } from "../../domain/UserEntity";
+import { UserEntity } from "../../../domain/UserEntity";
 
 export default function EmailChangeFieldContanier() {
   const [curUserData, setCurUserData] = React.useState<UserEntity | null>();
