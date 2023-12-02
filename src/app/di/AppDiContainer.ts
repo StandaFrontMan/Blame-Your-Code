@@ -1,5 +1,7 @@
 import { UserDataRepositoryImpl } from "../core/user/data/UserDataRepositoryImpl";
 import { UserDataRepository } from "../core/user/domain/UserDataRepository";
+import { PostSubmitionRepositoryImpl } from "../modules/create_post/data/PostSubmitionRepositoryImpl";
+import { PostSubmitionRepository } from "../modules/create_post/domain/PostSubmitionRepository";
 import { UserDataChangeRepositoryImpl } from "../modules/profile/user_settings/data/UserDataChangeRepositoryImpl";
 import { UserDataChangeRepository } from "../modules/profile/user_settings/domain/UserDataChangeRepository";
 import { AuthRepositoryImpl } from "../modules/sign_in/data/user_credentials/AuthRepositoryImpl";
@@ -23,5 +25,9 @@ export const appDiContainer: DiContainer = new (class implements DiContainer {
 
   updateUserDataChangeRepository(): UserDataChangeRepository {
     return new UserDataChangeRepositoryImpl();
+  }
+
+  createPostSubmitionRepository(): PostSubmitionRepository {
+    return new PostSubmitionRepositoryImpl();
   }
 })();
