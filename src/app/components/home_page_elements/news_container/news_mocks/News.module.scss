@@ -1,0 +1,26 @@
+.container {
+  @apply p-4 m-4 w-1/2 rounded-md
+       bg-gray-700;
+}
+
+.titleBlock {
+  @apply mb-4 flex justify-center items-center;
+
+  .icon {
+    @apply flex items-center justify-center h-16 w-16
+         bg-gray-400 dark:bg-gray-800 text-green-500
+           rounded-full;
+  }
+
+  .text {
+    @apply text-white font-semibold m-2;
+  }
+}
+
+.list {
+  @apply dark:text-gray-400;
+
+  .text {
+    @apply text-white;
+  }
+}

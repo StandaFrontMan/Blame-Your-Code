@@ -2,13 +2,15 @@
 
 import CredentialsAuthFormView from "./CredentialsAuthForm.view";
 import React from "react";
-import { diContainer } from "@/app/page";
-import { IUser } from "@/app/modules/Auth/domain/user_credentials/IUser";
 import { useRouter } from "next/navigation";
+import { User } from "@/app/modules/sign_in/domain/User";
+import { useInjection } from "@/app/core/hooks/UseInjection";
 
-export default function CredentialsAuthFormContainer() {
-  const authRepository = diContainer.getAuthRepository();
-  const userDataRepository = diContainer.getUserDataRepository();
+export default function CredentialsAuthFormContainer({}) {
+  const { getAuthRepository, getUserDataRepository } = useInjection();
+
+  const authRepository = getAuthRepository();
+  const userDataRepository = getUserDataRepository();
 
   const router = useRouter();
 
@@ -29,7 +31,7 @@ export default function CredentialsAuthFormContainer() {
     e.preventDefault();
 
     authRepository.getToken(formData.email, formData.password);
-    const userData: IUser = await userDataRepository.getUserData();
+    const userData: User = await userDataRepository.getUserData();
     console.log(userData);
 
     router.push("/pages/profilePage");

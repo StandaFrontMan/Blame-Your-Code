@@ -10,7 +10,7 @@ export class UserDataRepositoryImpl implements UserDataRepository {
     }
 
     const response = await fetch(
-      `https://59k4pfj3-8080.euw.devtunnels.ms/api/Account/Me`,
+      `${process.env.NEXT_PUBLIC_SERVER_BASE}Account/Me`,
       {
         method: "GET",
         headers: {
@@ -23,7 +23,8 @@ export class UserDataRepositoryImpl implements UserDataRepository {
     return data;
   }
 
-  private getTokenFromLocalStorage(): Promise<UserEntity> {
-    return JSON.parse(localStorage.getItem("token") || "[]");
+  private getTokenFromLocalStorage(): string | null {
+    const token = localStorage.getItem("token");
+    return token !== null ? JSON.parse(token) : null;
   }
 }

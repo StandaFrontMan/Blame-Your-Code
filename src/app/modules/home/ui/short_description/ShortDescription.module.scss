@@ -1,0 +1,26 @@
+.parent {
+  @apply flex-col text-center;
+}
+
+.mainTitle {
+  @apply bg-gradient-to-r from-orange-400 via-pink-500 to-gray-950 bg-[position:_0%_0%] text-transparent bg-clip-text
+         hover:bg-[position:_200%_50%] bg-[size:_200%] transition-all duration-500;
+
+  .span {
+    @apply text-6xl font-bold;
+  }
+}
+
+.descriptionContainer {
+  @apply mt-4;
+
+  .textDescription {
+    @apply text-2xl;
+  }
+}
+
+.button {
+  @apply w-1/4 p-2 my-4 justify-center
+       bg-black text-white rounded-lg
+       hover:bg-sky-700 transition-all duration-500;
+}
