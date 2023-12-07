@@ -14,10 +14,10 @@ export async function generateMetadata(): Promise<Metadata> {
 
 export default async function AuthPage() {
   return (
-    <main className="mx-10">
-      <Suspense fallback={<LoaderContanier />}>
+    <Suspense fallback={<LoaderContanier />}>
+      <main className="mx-10">
         <LazySignInFormContainer />
-      </Suspense>
-    </main>
+      </main>
+    </Suspense>
   );
 }
